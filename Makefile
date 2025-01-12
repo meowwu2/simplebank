@@ -1,3 +1,5 @@
+postgres:
+	docker run --name postgres11 -p 5432:5432 -e POSTGRES_USER=root POSTGRES_PASSWORD=secret -d postgres:12-alpine
 createdb:
 	docker exec -it postgres11 createdb --username=root --owner=root simplebank 
 dropdb:
@@ -11,4 +13,4 @@ sqlc:
 	sqlc generate
 test:
 	go test -v -cover ./...
-.PHONY: createdb dropdb migratedown migrateuo 
+.PHONY: postgres createdb dropdb migratedown migrateup
