@@ -24,7 +24,7 @@ jobs:
         env:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: secret
-          POSTRES_DB: simplebank
+          POSTGRES_DB: simplebank
         
         ports:
           - 5432:5432
