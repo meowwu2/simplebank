@@ -75,7 +75,7 @@ type loginUserRequest struct {
 
 type loginUserResponse struct {
 	AccessToken 	string 			`json:"access_token"`
-	user 			userResponse 	`json:"user"`
+	User 			userResponse 	`json:"user"`
 }
 
 func (server *Server)loginUser(ctx *gin.Context)  {
@@ -105,7 +105,8 @@ func (server *Server)loginUser(ctx *gin.Context)  {
 	}
 	rsp:=loginUserResponse{
 		AccessToken: accessToken,
-		user: NewUserResponse(usr),
+		User: NewUserResponse(usr),
 	}
 	ctx.JSON(http.StatusOK,rsp)
 }
+
